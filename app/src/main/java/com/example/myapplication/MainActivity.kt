@@ -41,8 +41,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
+//Todo: create a loading Screen and Error Screen State
+//Todo: create a screen to view the image in full size
 @Composable
 fun ImageListBox(modifier: Modifier = Modifier) {
     Box(
@@ -69,9 +69,7 @@ fun ImageListBox(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ImageInfoContent(modifier: Modifier = Modifier,
-                     imageInfo:ImageInfo
-) {
+fun ImageInfoContent(imageInfo:ImageInfo){
 
     Column (
         modifier = Modifier
@@ -79,8 +77,6 @@ fun ImageInfoContent(modifier: Modifier = Modifier,
             .height(300.dp)
         ,
         horizontalAlignment = Alignment.CenterHorizontally
-
-
     ) {
         Image(
             painter = rememberAsyncImagePainter(
@@ -99,12 +95,6 @@ fun ImageInfoContent(modifier: Modifier = Modifier,
             modifier = Modifier.padding(20.dp,10.dp)
             )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun ImageInfoContentPreview(modifier: Modifier = Modifier) {
-    ImageInfoContent(imageInfo = ImageInfo(0,"null",0,0,"null","null"))
 }
 
 
